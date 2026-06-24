@@ -1,10 +1,14 @@
 [gd_scene format=3 uid="uid://dwoxvplf70lam"]
 
+[ext_resource type="Script" uid="uid://c7n706lfu8tm0" path="res://Scenes/world.gd" id="1_8j60k"]
 [ext_resource type="Texture2D" uid="uid://c8780qmkwvlex" path="res://Assets/Bg.png" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://boqwxh2g0ig6v" path="res://Scenes/hobbit.tscn" id="2_go701"]
 [ext_resource type="PackedScene" uid="uid://bci3upd4onmla" path="res://Scenes/wizard.tscn" id="3_5a7ea"]
 
-[node name="World" type="Node2D" unique_id=1106288758]
+[node name="World" type="Node2D" unique_id=1106288758 node_paths=PackedStringArray("hobbit", "wizard")]
+script = ExtResource("1_8j60k")
+hobbit = NodePath("Hobbit")
+wizard = NodePath("Wizard")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=28591038]
 position = Vector2(577, 326)
@@ -13,11 +17,8 @@ texture = ExtResource("1_a02cp")
 [node name="Hobbit" parent="." unique_id=1776909363 instance=ExtResource("2_go701")]
 position = Vector2(199, 493)
 
-[node name="Hobbit2" parent="." unique_id=874798117 instance=ExtResource("2_go701")]
-position = Vector2(411, 545)
-
-[node name="Hobbit3" parent="." unique_id=1536378319 instance=ExtResource("2_go701")]
-position = Vector2(622, 483)
-
 [node name="Wizard" parent="." unique_id=627001919 instance=ExtResource("3_5a7ea")]
 position = Vector2(958, 418)
+
+[connection signal="kill_wizard" from="Hobbit" to="." method="_on_hobbit_kill_wizard"]
+[connection signal="cast_spell" from="Wizard" to="." method="_on_wizard_cast_spell"]

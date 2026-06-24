@@ -3,9 +3,14 @@
 [ext_resource type="Script" uid="uid://b6gq18si2v2my" path="res://Scenes/hobbit.gd" id="1_fnqmn"]
 [ext_resource type="Texture2D" uid="uid://camp3108ddodp" path="res://Assets/Hobbit.png" id="1_whk12"]
 
-[node name="Hobbit" type="Node2D" unique_id=1776909363]
+[node name="Hobbit" type="Node2D" unique_id=1776909363 node_paths=PackedStringArray("reveal_timer")]
 script = ExtResource("1_fnqmn")
+reveal_timer = NodePath("HideTimer")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1058024463]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_whk12")
+
+[node name="HideTimer" type="Timer" parent="." unique_id=2096491845]
+
+[connection signal="timeout" from="HideTimer" to="." method="_on_hide_timer_timeout"]
