@@ -5,6 +5,8 @@ extends Node
 
 @onready var counter: ClickCounter = $UI/Counter
 @onready var click_button: Button = $UI/ClickButton
+# added reset button
+@onready var reset_button: Button = $UI/ResetButton 
 @onready var instruction: Label = $UI/Instruction
 @onready var narration: Narration = $UI/Narration
 
