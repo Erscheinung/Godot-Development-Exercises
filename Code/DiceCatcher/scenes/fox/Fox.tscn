@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6rwnq53s473c"]
+
+[ext_resource type="Script" uid="uid://du6dd33gs71ek" path="res://scenes/fox/fox.gd" id="1_2r0bn"]
+[ext_resource type="Texture2D" uid="uid://sit5ldkt5or7" path="res://assets/Fox.png" id="1_fsrk8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xvop"]
+size = Vector2(101, 4.5)
+
+[node name="Fox" type="Area2D"]
+script = ExtResource("1_2r0bn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fsrk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 6.75)
+shape = SubResource("RectangleShape2D_7xvop")
+
+[node name="Scores" type="AudioStreamPlayer2D" parent="."]

@@ -1,24 +1,28 @@
-[gd_scene format=3 uid="uid://c6fyoodiunts5"]
+[gd_scene load_steps=5 format=3 uid="uid://c6fyoodiunts5"]
 
 [ext_resource type="Script" uid="uid://cilhoqy6r8w7" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="Texture2D" uid="uid://btsdbq8we4ofg" path="res://assets/GemBg.png" id="1_sul5r"]
 [ext_resource type="AudioStream" uid="uid://cwpkcmoeuh3ie" path="res://assets/tetris.mp3" id="4_kelw5"]
+[ext_resource type="PackedScene" uid="uid://c6rwnq53s473c" path="res://scenes/fox/Fox.tscn" id="4_lfrn8"]
 
-[node name="Game" type="Node2D" unique_id=395297788]
+[node name="Game" type="Node2D"]
 script = ExtResource("1_0sr1o")
 
-[node name="GemBg" type="Sprite2D" parent="." unique_id=301992427]
+[node name="GemBg" type="Sprite2D" parent="."]
 position = Vector2(621, 349)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("1_sul5r")
 
-[node name="SpawnTimer" type="Timer" parent="." unique_id=1831035524]
+[node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
 
-[node name="Sound" type="AudioStreamPlayer" parent="." unique_id=1525014314]
+[node name="Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_kelw5")
 autoplay = true
 parameters/looping = true
+
+[node name="Fox" parent="." instance=ExtResource("4_lfrn8")]
+position = Vector2(624, 642)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
