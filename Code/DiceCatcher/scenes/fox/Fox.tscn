@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6rwnq53s473c"]
+[gd_scene load_steps=5 format=3 uid="uid://c6rwnq53s473c"]
 
 [ext_resource type="Script" uid="uid://du6dd33gs71ek" path="res://scenes/fox/fox.gd" id="1_2r0bn"]
 [ext_resource type="Texture2D" uid="uid://sit5ldkt5or7" path="res://assets/Fox.png" id="1_fsrk8"]
+[ext_resource type="AudioStream" uid="uid://c2yrri0xe238e" path="res://assets/eating.wav" id="3_5ha1g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xvop"]
 size = Vector2(101, 4.5)
@@ -13,7 +14,10 @@ script = ExtResource("1_2r0bn")
 texture = ExtResource("1_fsrk8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 6.75)
+position = Vector2(0, 28)
 shape = SubResource("RectangleShape2D_7xvop")
 
 [node name="Scores" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5ha1g")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

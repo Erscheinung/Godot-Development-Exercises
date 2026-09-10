@@ -1,6 +1,4 @@
+res://scenes/fox/fox.gd
+res://scenes/fox/Fox.tscn
 res://scenes/game/game.tscn
 res://scenes/game/game.gd
-res://scenes/dice/dice.tscn
-res://scenes/Fox.tscn
-res://scenes/fox/Fox.tscn
-res://scenes/fox/fox.gd

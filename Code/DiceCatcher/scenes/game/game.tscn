@@ -23,6 +23,6 @@ autoplay = true
 parameters/looping = true
 
 [node name="Fox" parent="." instance=ExtResource("4_lfrn8")]
-position = Vector2(624, 642)
+position = Vector2(647, 575)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

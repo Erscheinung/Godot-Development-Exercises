@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1788970536
+::res://::1788972731
 ::res://addons/::1788805617
 ::res://addons/godot_ai/::1788805617
 ::res://addons/godot_ai/clients/::1788805605
@@ -22,12 +22,13 @@ game_over.wav::AudioStreamWAV::297805461705113447::1760440458::1784006890::1::::
 GemBg.png::CompressedTexture2D::3757352341519225488::1760440458::1784006890::1::::<><><>0<>0<>3eb24661e6a29a1c7b549a42351af5e4<>res://.godot/imported/GemBg.png-60fa45b1aa1fa6930098f2191d462c91.ctex::
 tetris.mp3::AudioStreamMP3::6348572987365525372::1760440458::1784006889::1::::<><><>0<>0<>37f23d8b2c3e739372dc9b8f15415ca9<>res://.godot/imported/tetris.mp3-24d33ca985e2066e89e3dc4d94c4ce17.mp3str::
 TitanOne-Regular.ttf::FontFile::3958704575007259281::1779072054::1784006889::1::::<><><>0<>0<>22ab5380f82e74e667618173f8b0bba6<>res://.godot/imported/TitanOne-Regular.ttf-f24f55e6002372b8b12e295c2244cbc3.fontdata::
-::res://scenes/::1788970531
-Fox.tscn::PackedScene::6985149819161006530::1788970527::0::1::::<><><>0<>0<><>::uid://sit5ldkt5or7::::res://assets/Fox.png
+::res://scenes/::1788972594
 ::res://scenes/dice/::1788970026
 dice.gd::GDScript::9003561497384891160::1785597454::0::1::::Dice<>Area2D<><>0<>0<><>::
 dice.tscn::PackedScene::3208200147662235686::1788970026::0::1::::<><><>0<>0<><>::uid://c8h2f83rc7tdl::::res://assets/Dice.png<>uid://d1jnlv3xbbt7u::::res://scenes/dice/dice.gd
-::res://scenes/fox/::0
-::res://scenes/game/::1788970084
-game.gd::GDScript::157573857962664712::1788970026::0::1::::<>Node2D<><>0<>0<><>::
-game.tscn::PackedScene::6960500358228627510::1788969902::0::1::::<><><>0<>0<><>::uid://cilhoqy6r8w7::::res://scenes/game/game.gd<>uid://btsdbq8we4ofg::::res://assets/GemBg.png<>uid://cwpkcmoeuh3ie::::res://assets/tetris.mp3
+::res://scenes/fox/::1788972688
+fox.gd::GDScript::8627223656782100186::1788972582::0::1::::<>Area2D<><>0<>0<><>::
+Fox.tscn::PackedScene::6985149819161006530::1788972688::0::1::::<><><>0<>0<><>::uid://du6dd33gs71ek::::res://scenes/fox/fox.gd<>uid://sit5ldkt5or7::::res://assets/Fox.png
+::res://scenes/game/::1788972013
+game.gd::GDScript::157573857962664712::1788971676::0::1::::<>Node2D<><>0<>0<><>::
+game.tscn::PackedScene::6960500358228627510::1788972013::0::1::::<><><>0<>0<><>::uid://cilhoqy6r8w7::::res://scenes/game/game.gd<>uid://btsdbq8we4ofg::::res://assets/GemBg.png<>uid://cwpkcmoeuh3ie::::res://assets/tetris.mp3<>uid://c6rwnq53s473c::::res://scenes/fox/Fox.tscn

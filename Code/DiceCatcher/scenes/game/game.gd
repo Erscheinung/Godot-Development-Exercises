@@ -1,5 +1,4 @@
 extends Node2D
-
 # @export var dice_scene: PackedScene
 const DICE = preload("res://scenes/dice/dice.tscn")
 # preload at compile time (const) and load at runtime (var)
