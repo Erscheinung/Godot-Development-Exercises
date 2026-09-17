@@ -1,6 +1,8 @@
 class_name Dice
 extends Area2D
 
+signal off_screen
+
 const SPEED: float = 200.0
 const BUFFER: float = 60.0
 const ROTATION_SPEED: float = 2 * PI
@@ -17,14 +19,13 @@ func _ready() -> void:
 	)
 	position.y = get_viewport_rect().position.y - BUFFER
 	
-
 func _physics_process(delta: float) -> void:
 	position.y += SPEED * delta
 	sprite_2d.rotate(_rotation_speed * delta)
-	# check_off_screen()
-	
+	check_off_screen()
 	
 func check_off_screen() -> void:
 	if get_viewport_rect().end.y < position.y:
 		get_tree().paused = true
-		
+		off_screen.emit()
+		# queue_free() #otherwise weird game_over sound because check_off_screen running continuously

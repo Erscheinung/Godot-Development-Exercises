@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6fyoodiunts5"]
+[gd_scene load_steps=8 format=3 uid="uid://c6fyoodiunts5"]
 
 [ext_resource type="Script" uid="uid://cilhoqy6r8w7" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="Texture2D" uid="uid://btsdbq8we4ofg" path="res://assets/GemBg.png" id="1_sul5r"]
 [ext_resource type="AudioStream" uid="uid://cwpkcmoeuh3ie" path="res://assets/tetris.mp3" id="4_kelw5"]
 [ext_resource type="PackedScene" uid="uid://c6rwnq53s473c" path="res://scenes/fox/Fox.tscn" id="4_lfrn8"]
+[ext_resource type="FontFile" uid="uid://bwnvjyuaswp5j" path="res://assets/TitanOne-Regular.ttf" id="5_lfrn8"]
+[ext_resource type="PackedScene" uid="uid://caw4pplktn5un" path="res://scenes/reloader/reloader.tscn" id="6_5i0tg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5i0tg"]
+font = ExtResource("5_lfrn8")
+font_size = 48
+outline_size = 8
+outline_color = Color(0, 0, 0, 0.8117647)
+shadow_size = 6
+shadow_offset = Vector2(3, 3)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0sr1o")
@@ -25,4 +35,15 @@ parameters/looping = true
 [node name="Fox" parent="." instance=ExtResource("4_lfrn8")]
 position = Vector2(647, 575)
 
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 26.0
+offset_top = 22.0
+offset_right = 165.0
+offset_bottom = 78.0
+text = "0000"
+label_settings = SubResource("LabelSettings_5i0tg")
+
+[node name="Reloader" parent="." instance=ExtResource("6_5i0tg")]
+
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
+[connection signal="eaten_dice" from="Fox" to="." method="_on_fox_eaten_dice"]
